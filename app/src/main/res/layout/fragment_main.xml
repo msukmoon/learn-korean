@@ -10,6 +10,21 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="0dp"
+            android:layout_height="200dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:gravity="center"
+            android:text="@string/learn_korean"
+            android:textSize="32sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
         <Button
             android:id="@+id/learn_button"
             android:layout_width="0dp"
@@ -17,10 +32,11 @@
             android:layout_marginStart="16dp"
             android:layout_marginTop="16dp"
             android:layout_marginEnd="16dp"
-            android:text="Learn Korean"
+            android:text="@string/learn_korean"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toBottomOf="@+id/textView"
+            style="@style/ButtonTheme" />
 
         <Button
             android:id="@+id/game_button"
@@ -29,10 +45,11 @@
             android:layout_marginStart="16dp"
             android:layout_marginTop="16dp"
             android:layout_marginEnd="16dp"
-            android:text="Play Game"
+            android:text="@string/play_game"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/learn_button" />
+            app:layout_constraintTop_toBottomOf="@+id/learn_button"
+            style="@style/ButtonTheme" />
 
         <Button
             android:id="@+id/help_button"
@@ -41,10 +58,11 @@
             android:layout_marginStart="16dp"
             android:layout_marginTop="16dp"
             android:layout_marginEnd="16dp"
-            android:text="Help"
+            android:text="@string/help"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/game_button" />
+            app:layout_constraintTop_toBottomOf="@+id/game_button"
+            style="@style/ButtonTheme" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </FrameLayout>
