@@ -11,13 +11,13 @@
         android:label="fragment_main"
         tools:layout="@layout/fragment_main" >
         <action
-            android:id="@+id/action_mainFragment_to_learnFragment"
+            android:id="@+id/learnFragmentAction"
             app:destination="@id/learnFragment" />
         <action
-            android:id="@+id/action_mainFragment_to_gameFragment"
+            android:id="@+id/gameFragmentAction"
             app:destination="@id/gameFragment" />
         <action
-            android:id="@+id/action_mainFragment_to_helpFragment"
+            android:id="@+id/helpFragmentAction"
             app:destination="@id/helpFragment" />
     </fragment>
     <fragment
