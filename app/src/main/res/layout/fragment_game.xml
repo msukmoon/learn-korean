@@ -22,7 +22,7 @@
             app:layout_constraintBottom_toTopOf="@+id/button3"
             app:layout_constraintEnd_toStartOf="@+id/button2"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView" />
+            app:layout_constraintTop_toBottomOf="@+id/scoreTextView" />
 
         <Button
             android:id="@+id/button2"
@@ -36,7 +36,7 @@
             app:layout_constraintBottom_toTopOf="@+id/button4"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/button1"
-            app:layout_constraintTop_toBottomOf="@+id/textView" />
+            app:layout_constraintTop_toBottomOf="@+id/scoreTextView" />
 
         <Button
             android:id="@+id/button3"
@@ -152,12 +152,11 @@
             app:layout_constraintTop_toBottomOf="@+id/button8" />
 
         <TextView
-            android:id="@+id/textView"
+            android:id="@+id/scoreTextView"
             android:layout_width="0dp"
             android:layout_height="75dp"
             android:layout_marginTop="16dp"
             android:gravity="center"
-            android:text="@string/score"
             android:textSize="28sp"
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
