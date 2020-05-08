@@ -10,12 +10,20 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.util.ArrayList;
+
 
 /**
  * A {@link Fragment} subclass for the learn page.
  */
 public class LearnFragment extends Fragment {
     // Global variables
+    private ArrayList<Character> charList;
+
     private Button button1;
     private Button button2;
     private Button button3;
@@ -51,11 +59,33 @@ public class LearnFragment extends Fragment {
         // Required empty public constructor
     }
 
+    private void loadDataset(int resourceId) {
+        InputStream is = this.getResources().openRawResource(resourceId);
+        BufferedReader br = new BufferedReader(new InputStreamReader(is));
+        String line1 = null;
+        String line2 = null;
+
+        try {
+            // While the next line is not null
+            while ((null != (line1 = br.readLine())) && (null != (line2 = br.readLine()))) {
+                charList.add(new Character(line1, line2));
+            }
+
+            is.close();
+            br.close();
+        }
+        catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
         // Initialize global variables on creating this fragment
+        charList = new ArrayList<Character>();
+
         button1Clicked = false;
         button2Clicked = false;
         button3Clicked = false;
@@ -68,6 +98,9 @@ public class LearnFragment extends Fragment {
         button10Clicked = false;
         button11Clicked = false;
         button12Clicked = false;
+
+        // Load character list from the dataset
+        loadDataset(R.raw.dataset);
     }
 
     @Override
@@ -97,7 +130,7 @@ public class LearnFragment extends Fragment {
         unclickedButtonTextColor = ResourcesCompat.getColor(getResources(), R.color.colorLearnButtonTextUnclicked, null);
 
         // Set button text
-        button1.setText(R.string.unclick);
+        button1.setText(charList.get(0).getKorean());
         button2.setText(R.string.unclick);
         button3.setText(R.string.unclick);
         button4.setText(R.string.unclick);
