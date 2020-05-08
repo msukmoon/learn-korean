@@ -1,6 +1,5 @@
 package com.example.learnkorean;
 
-import android.graphics.Color;
 import android.os.Bundle;
 
 import androidx.core.content.res.ResourcesCompat;
@@ -58,6 +57,8 @@ public class GameFragment extends Fragment {
         super.onCreate(savedInstanceState);
 
         // Initialize global variables on creating this fragment
+        score = 0;
+
         button1Clicked = false;
         button2Clicked = false;
         button3Clicked = false;
@@ -68,9 +69,6 @@ public class GameFragment extends Fragment {
         button8Clicked = false;
         button9Clicked = false;
         button10Clicked = false;
-
-        // TODO: Implement game score counts
-        score = 0;
     }
 
     @Override
@@ -125,7 +123,8 @@ public class GameFragment extends Fragment {
                     view.setBackgroundColor(clickedButtonColor);
                     button1Clicked = true;
                     scoreTextView.setText(getString(R.string.score) + (++score));
-                } else {
+                }
+                else {
                     button1.setText(R.string.unclick);
                     button1.setTextColor(unclickedButtonTextColor);
                     view.setBackgroundColor(unclickedButtonColor);
@@ -142,7 +141,8 @@ public class GameFragment extends Fragment {
                     view.setBackgroundColor(clickedButtonColor);
                     button2Clicked = true;
                     scoreTextView.setText(getString(R.string.score) + (++score));
-                } else {
+                }
+                else {
                     button2.setText(R.string.unclick);
                     button2.setTextColor(unclickedButtonTextColor);
                     view.setBackgroundColor(unclickedButtonColor);
@@ -159,7 +159,8 @@ public class GameFragment extends Fragment {
                     view.setBackgroundColor(clickedButtonColor);
                     button3Clicked = true;
                     scoreTextView.setText(getString(R.string.score) + (++score));
-                } else {
+                }
+                else {
                     button3.setText(R.string.unclick);
                     button3.setTextColor(unclickedButtonTextColor);
                     view.setBackgroundColor(unclickedButtonColor);
@@ -176,7 +177,8 @@ public class GameFragment extends Fragment {
                     view.setBackgroundColor(clickedButtonColor);
                     button4Clicked = true;
                     scoreTextView.setText(getString(R.string.score) + (++score));
-                } else {
+                }
+                else {
                     button4.setText(R.string.unclick);
                     button4.setTextColor(unclickedButtonTextColor);
                     view.setBackgroundColor(unclickedButtonColor);
@@ -193,7 +195,8 @@ public class GameFragment extends Fragment {
                     view.setBackgroundColor(clickedButtonColor);
                     button5Clicked = true;
                     scoreTextView.setText(getString(R.string.score) + (++score));
-                } else {
+                }
+                else {
                     button5.setText(R.string.unclick);
                     button5.setTextColor(unclickedButtonTextColor);
                     view.setBackgroundColor(unclickedButtonColor);
@@ -210,7 +213,8 @@ public class GameFragment extends Fragment {
                     view.setBackgroundColor(clickedButtonColor);
                     button6Clicked = true;
                     scoreTextView.setText(getString(R.string.score) + (++score));
-                } else {
+                }
+                else {
                     button6.setText(R.string.unclick);
                     button6.setTextColor(unclickedButtonTextColor);
                     view.setBackgroundColor(unclickedButtonColor);
@@ -227,7 +231,8 @@ public class GameFragment extends Fragment {
                     view.setBackgroundColor(clickedButtonColor);
                     button7Clicked = true;
                     scoreTextView.setText(getString(R.string.score) + (++score));
-                } else {
+                }
+                else {
                     button7.setText(R.string.unclick);
                     button7.setTextColor(unclickedButtonTextColor);
                     view.setBackgroundColor(unclickedButtonColor);
@@ -244,7 +249,8 @@ public class GameFragment extends Fragment {
                     view.setBackgroundColor(clickedButtonColor);
                     button8Clicked = true;
                     scoreTextView.setText(getString(R.string.score) + (++score));
-                } else {
+                }
+                else {
                     button8.setText(R.string.unclick);
                     button8.setTextColor(unclickedButtonTextColor);
                     view.setBackgroundColor(unclickedButtonColor);
@@ -261,7 +267,8 @@ public class GameFragment extends Fragment {
                     view.setBackgroundColor(clickedButtonColor);
                     button9Clicked = true;
                     scoreTextView.setText(getString(R.string.score) + (++score));
-                } else {
+                }
+                else {
                     button9.setText(R.string.unclick);
                     button9.setTextColor(unclickedButtonTextColor);
                     view.setBackgroundColor(unclickedButtonColor);
@@ -278,7 +285,8 @@ public class GameFragment extends Fragment {
                     view.setBackgroundColor(clickedButtonColor);
                     button10Clicked = true;
                     scoreTextView.setText(getString(R.string.score) + (++score));
-                } else {
+                }
+                else {
                     button10.setText(R.string.unclick);
                     button10.setTextColor(unclickedButtonTextColor);
                     view.setBackgroundColor(unclickedButtonColor);

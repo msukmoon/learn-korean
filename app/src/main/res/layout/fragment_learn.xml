@@ -153,6 +153,7 @@
 
         <Button
             android:id="@+id/button11"
+            style="@style/ButtonTheme"
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:layout_marginStart="16dp"
@@ -166,6 +167,7 @@
 
         <Button
             android:id="@+id/button12"
+            style="@style/ButtonTheme"
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:layout_marginStart="8dp"

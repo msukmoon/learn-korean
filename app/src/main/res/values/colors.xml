@@ -9,4 +9,7 @@
     <color name="colorGameButtonClicked">#fff176</color>
     <color name="colorGameButtonTextClicked">#000000</color>
     <color name="colorGameButtonTextUnclicked">#FFFFFF</color>
+    <color name="colorLearnButtonClicked">#aed581</color>
+    <color name="colorLearnButtonTextClicked">#000000</color>
+    <color name="colorLearnButtonTextUnclicked">#FFFFFF</color>
 </resources>
