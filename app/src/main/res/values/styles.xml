@@ -11,7 +11,7 @@
     </style>
 
     <style name="ButtonTheme" parent="Widget.MaterialComponents.Button">
-        <item name="android:textColor">@color/colorTextButton</item>
+        <item name="android:textColor">@color/colorButtonText</item>
     </style>
 
 </resources>

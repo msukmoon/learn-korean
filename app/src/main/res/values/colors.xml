@@ -5,5 +5,8 @@
     <color name="colorOnPrimary">#FFFFFF</color>
     <color name="colorBackground">#212121</color>
     <color name="colorOnBackground">#FFFFFF</color>
-    <color name="colorTextButton">#FFFFFF</color>
+    <color name="colorButtonText">#FFFFFF</color>
+    <color name="colorGameButtonClicked">#fff176</color>
+    <color name="colorGameButtonTextClicked">#000000</color>
+    <color name="colorGameButtonTextUnclicked">#FFFFFF</color>
 </resources>
