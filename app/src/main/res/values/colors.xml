@@ -2,9 +2,7 @@
 <resources>
     <color name="colorPrimary">#484848</color>
     <color name="colorPrimaryVariant">#000000</color>
-    <color name="colorOnPrimary">#FFFFFF</color>
     <color name="colorBackground">#212121</color>
-    <color name="colorOnBackground">#FFFFFF</color>
     <color name="colorButtonText">#FFFFFF</color>
     <color name="colorGameButtonClicked">#fff176</color>
     <color name="colorGameButtonTextClicked">#000000</color>
