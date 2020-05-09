@@ -11,12 +11,25 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
 
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Random;
+
 
 /**
  * A {@link Fragment} subclass for the game page.
  */
 public class GameFragment extends Fragment {
     // Global variables
+    private ArrayList<Character> characters;
+    private ArrayList<Integer> randomNumbers;
+
+    private int datasetSize;
+
     private TextView scoreTextView;
 
     private Button button1;
@@ -52,11 +65,68 @@ public class GameFragment extends Fragment {
         // Required empty public constructor
     }
 
+    /**
+     * Method to load dataset to characters list
+     *
+     * @param resourceId type int, id of a dataset resource
+     * @return type int, size of a dataset
+     */
+    private int loadDataset(int resourceId) {
+        InputStream is = this.getResources().openRawResource(resourceId);
+        BufferedReader br = new BufferedReader(new InputStreamReader(is));
+        int datasetSize = 0;
+        String korean = null;
+        String english = null;
+
+        try {
+            // Read the first line that contains the size of the dataset
+            datasetSize = Integer.parseInt(br.readLine());
+
+            // While the next line is not null
+            while ((null != (korean = br.readLine())) && (null != (english = br.readLine()))) {
+                characters.add(new Character(korean, english));
+            }
+
+            is.close();
+            br.close();
+        }
+        catch (NumberFormatException | IOException e) {
+            e.printStackTrace();
+        }
+
+        return datasetSize;
+    }
+
+    /**
+     * Method to generate random numbers to randomNumbers list
+     */
+    private void generateRandomNumbers() {
+        Random random = new Random();
+        int counter = 0;                    // Incremented from zero to max
+        int numerator = 10;                 // Decremented from 10 to zero
+        int denominator = datasetSize;      // Decremented from datasetSize
+
+        while(counter < datasetSize && numerator > 0) {
+            if (random.nextDouble() < (double) numerator / denominator) {
+                randomNumbers.add(counter);
+                numerator--;
+            }
+            counter++;
+            denominator--;
+        }
+
+        // Shuffle list randomly
+        Collections.shuffle(randomNumbers);
+    }
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
         // Initialize global variables on creating this fragment
+        characters = new ArrayList<Character>();
+        randomNumbers = new ArrayList<Integer>(10);
+
         score = 0;
 
         button1Clicked = false;
@@ -69,6 +139,12 @@ public class GameFragment extends Fragment {
         button8Clicked = false;
         button9Clicked = false;
         button10Clicked = false;
+
+        // Load character list from the dataset
+        datasetSize = loadDataset(R.raw.dataset);
+
+        // Generate random numbers
+        generateRandomNumbers();
     }
 
     @Override
@@ -102,30 +178,28 @@ public class GameFragment extends Fragment {
         scoreTextView.setText(getString(R.string.score) + score);
 
         // Set button text
-        button1.setText(R.string.unclick);
-        button2.setText(R.string.unclick);
-        button3.setText(R.string.unclick);
-        button4.setText(R.string.unclick);
-        button5.setText(R.string.unclick);
-        button6.setText(R.string.unclick);
-        button7.setText(R.string.unclick);
-        button8.setText(R.string.unclick);
-        button9.setText(R.string.unclick);
-        button10.setText(R.string.unclick);
+        button1.setText(characters.get(randomNumbers.get(0)).getKorean());
+        button2.setText(characters.get(randomNumbers.get(1)).getEnglish());
+        button3.setText(characters.get(randomNumbers.get(2)).getKorean());
+        button4.setText(characters.get(randomNumbers.get(3)).getEnglish());
+        button5.setText(characters.get(randomNumbers.get(4)).getKorean());
+        button6.setText(characters.get(randomNumbers.get(5)).getEnglish());
+        button7.setText(characters.get(randomNumbers.get(6)).getKorean());
+        button8.setText(characters.get(randomNumbers.get(7)).getEnglish());
+        button9.setText(characters.get(randomNumbers.get(8)).getKorean());
+        button10.setText(characters.get(randomNumbers.get(9)).getEnglish());
 
         // Set listener to the buttons
         button1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 if(false == button1Clicked) {
-                    button1.setText(R.string.click);
                     button1.setTextColor(clickedButtonTextColor);
                     view.setBackgroundColor(clickedButtonColor);
                     button1Clicked = true;
                     scoreTextView.setText(getString(R.string.score) + (++score));
                 }
                 else {
-                    button1.setText(R.string.unclick);
                     button1.setTextColor(unclickedButtonTextColor);
                     view.setBackgroundColor(unclickedButtonColor);
                     button1Clicked = false;
@@ -136,14 +210,12 @@ public class GameFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 if(false == button2Clicked) {
-                    button2.setText(R.string.click);
                     button2.setTextColor(clickedButtonTextColor);
                     view.setBackgroundColor(clickedButtonColor);
                     button2Clicked = true;
                     scoreTextView.setText(getString(R.string.score) + (++score));
                 }
                 else {
-                    button2.setText(R.string.unclick);
                     button2.setTextColor(unclickedButtonTextColor);
                     view.setBackgroundColor(unclickedButtonColor);
                     button2Clicked = false;
@@ -154,14 +226,12 @@ public class GameFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 if(false == button3Clicked) {
-                    button3.setText(R.string.click);
                     button3.setTextColor(clickedButtonTextColor);
                     view.setBackgroundColor(clickedButtonColor);
                     button3Clicked = true;
                     scoreTextView.setText(getString(R.string.score) + (++score));
                 }
                 else {
-                    button3.setText(R.string.unclick);
                     button3.setTextColor(unclickedButtonTextColor);
                     view.setBackgroundColor(unclickedButtonColor);
                     button3Clicked = false;
@@ -172,14 +242,12 @@ public class GameFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 if(false == button4Clicked) {
-                    button4.setText(R.string.click);
                     button4.setTextColor(clickedButtonTextColor);
                     view.setBackgroundColor(clickedButtonColor);
                     button4Clicked = true;
                     scoreTextView.setText(getString(R.string.score) + (++score));
                 }
                 else {
-                    button4.setText(R.string.unclick);
                     button4.setTextColor(unclickedButtonTextColor);
                     view.setBackgroundColor(unclickedButtonColor);
                     button4Clicked = false;
@@ -190,14 +258,12 @@ public class GameFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 if(false == button5Clicked) {
-                    button5.setText(R.string.click);
                     button5.setTextColor(clickedButtonTextColor);
                     view.setBackgroundColor(clickedButtonColor);
                     button5Clicked = true;
                     scoreTextView.setText(getString(R.string.score) + (++score));
                 }
                 else {
-                    button5.setText(R.string.unclick);
                     button5.setTextColor(unclickedButtonTextColor);
                     view.setBackgroundColor(unclickedButtonColor);
                     button5Clicked = false;
@@ -208,14 +274,12 @@ public class GameFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 if(false == button6Clicked) {
-                    button6.setText(R.string.click);
                     button6.setTextColor(clickedButtonTextColor);
                     view.setBackgroundColor(clickedButtonColor);
                     button6Clicked = true;
                     scoreTextView.setText(getString(R.string.score) + (++score));
                 }
                 else {
-                    button6.setText(R.string.unclick);
                     button6.setTextColor(unclickedButtonTextColor);
                     view.setBackgroundColor(unclickedButtonColor);
                     button6Clicked = false;
@@ -226,14 +290,12 @@ public class GameFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 if(false == button7Clicked) {
-                    button7.setText(R.string.click);
                     button7.setTextColor(clickedButtonTextColor);
                     view.setBackgroundColor(clickedButtonColor);
                     button7Clicked = true;
                     scoreTextView.setText(getString(R.string.score) + (++score));
                 }
                 else {
-                    button7.setText(R.string.unclick);
                     button7.setTextColor(unclickedButtonTextColor);
                     view.setBackgroundColor(unclickedButtonColor);
                     button7Clicked = false;
@@ -244,14 +306,12 @@ public class GameFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 if(false == button8Clicked) {
-                    button8.setText(R.string.click);
                     button8.setTextColor(clickedButtonTextColor);
                     view.setBackgroundColor(clickedButtonColor);
                     button8Clicked = true;
                     scoreTextView.setText(getString(R.string.score) + (++score));
                 }
                 else {
-                    button8.setText(R.string.unclick);
                     button8.setTextColor(unclickedButtonTextColor);
                     view.setBackgroundColor(unclickedButtonColor);
                     button8Clicked = false;
@@ -262,14 +322,12 @@ public class GameFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 if(false == button9Clicked) {
-                    button9.setText(R.string.click);
                     button9.setTextColor(clickedButtonTextColor);
                     view.setBackgroundColor(clickedButtonColor);
                     button9Clicked = true;
                     scoreTextView.setText(getString(R.string.score) + (++score));
                 }
                 else {
-                    button9.setText(R.string.unclick);
                     button9.setTextColor(unclickedButtonTextColor);
                     view.setBackgroundColor(unclickedButtonColor);
                     button9Clicked = false;
@@ -280,14 +338,12 @@ public class GameFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 if(false == button10Clicked) {
-                    button10.setText(R.string.click);
                     button10.setTextColor(clickedButtonTextColor);
                     view.setBackgroundColor(clickedButtonColor);
                     button10Clicked = true;
                     scoreTextView.setText(getString(R.string.score) + (++score));
                 }
                 else {
-                    button10.setText(R.string.unclick);
                     button10.setTextColor(unclickedButtonTextColor);
                     view.setBackgroundColor(unclickedButtonColor);
                     button10Clicked = false;
