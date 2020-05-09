@@ -9,4 +9,5 @@
     <string name="score">Score:&#032;"</string>
     <string name="click">Clicked</string>
     <string name="unclick">Unclicked</string>
+    <string name="get_new_characters">Get New Characters</string>
 </resources>

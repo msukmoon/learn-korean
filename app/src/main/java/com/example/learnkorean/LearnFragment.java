@@ -5,7 +5,6 @@ import android.os.Bundle;
 import androidx.core.content.res.ResourcesCompat;
 import androidx.fragment.app.Fragment;
 
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -28,6 +27,9 @@ public class LearnFragment extends Fragment {
     private ArrayList<Character> characters;
     private ArrayList<Integer> randomNumbers;
 
+    private int datasetSize;
+
+    private Button resetButton;
     private Button button1;
     private Button button2;
     private Button button3;
@@ -97,16 +99,14 @@ public class LearnFragment extends Fragment {
 
     /**
      * Method to generate random numbers to randomNumbers list
-     *
-     * @param max type int, maximum range (highest possible number) of random numbers
      */
-    private void generateRandomNumbers(int max) {
+    private void generateRandomNumbers() {
         Random random = new Random();
-        int counter = 0;            // Incremented from zero to max
-        int numerator = 12;         // Decremented from 12 to zero
-        int denominator = max;      // Decremented from max
+        int counter = 0;                    // Incremented from zero to max
+        int numerator = 12;                 // Decremented from 12 to zero
+        int denominator = datasetSize;      // Decremented from datasetSize
 
-        while(counter < max && numerator > 0) {
+        while(counter < datasetSize && numerator > 0) {
             if (random.nextDouble() < (double) numerator / denominator) {
                 randomNumbers.add(counter);
                 numerator--;
@@ -141,10 +141,10 @@ public class LearnFragment extends Fragment {
         button12Clicked = false;
 
         // Load character list from the dataset
-        int datasetSize = loadDataset(R.raw.dataset);
+        datasetSize = loadDataset(R.raw.dataset);
 
         // Generate random numbers
-        generateRandomNumbers(datasetSize);
+        generateRandomNumbers();
     }
 
     @Override
@@ -154,6 +154,7 @@ public class LearnFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_learn, container, false);
 
         // Get reference to the buttons
+        resetButton = view.findViewById(R.id.reset_button);
         button1 = view.findViewById(R.id.button1);
         button2 = view.findViewById(R.id.button2);
         button3 = view.findViewById(R.id.button3);
@@ -188,6 +189,69 @@ public class LearnFragment extends Fragment {
         button12.setText(characters.get(randomNumbers.get(11)).getKorean());
 
         // Set listener to the buttons
+        resetButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                // Generate new numbers
+                generateRandomNumbers();
+
+                // Reset all button texts
+                button1.setText(characters.get(randomNumbers.get(0)).getKorean());
+                button2.setText(characters.get(randomNumbers.get(1)).getKorean());
+                button3.setText(characters.get(randomNumbers.get(2)).getKorean());
+                button4.setText(characters.get(randomNumbers.get(3)).getKorean());
+                button5.setText(characters.get(randomNumbers.get(4)).getKorean());
+                button6.setText(characters.get(randomNumbers.get(5)).getKorean());
+                button7.setText(characters.get(randomNumbers.get(6)).getKorean());
+                button8.setText(characters.get(randomNumbers.get(7)).getKorean());
+                button9.setText(characters.get(randomNumbers.get(8)).getKorean());
+                button10.setText(characters.get(randomNumbers.get(9)).getKorean());
+                button11.setText(characters.get(randomNumbers.get(10)).getKorean());
+                button12.setText(characters.get(randomNumbers.get(11)).getKorean());
+
+                // Reset all button text colors
+                button1.setTextColor(unclickedButtonTextColor);
+                button2.setTextColor(unclickedButtonTextColor);
+                button3.setTextColor(unclickedButtonTextColor);
+                button4.setTextColor(unclickedButtonTextColor);
+                button5.setTextColor(unclickedButtonTextColor);
+                button6.setTextColor(unclickedButtonTextColor);
+                button7.setTextColor(unclickedButtonTextColor);
+                button8.setTextColor(unclickedButtonTextColor);
+                button9.setTextColor(unclickedButtonTextColor);
+                button10.setTextColor(unclickedButtonTextColor);
+                button11.setTextColor(unclickedButtonTextColor);
+                button12.setTextColor(unclickedButtonTextColor);
+
+                // Reset all button colors
+                button1.setBackgroundColor(unclickedButtonColor);
+                button2.setBackgroundColor(unclickedButtonColor);
+                button3.setBackgroundColor(unclickedButtonColor);
+                button4.setBackgroundColor(unclickedButtonColor);
+                button5.setBackgroundColor(unclickedButtonColor);
+                button6.setBackgroundColor(unclickedButtonColor);
+                button7.setBackgroundColor(unclickedButtonColor);
+                button8.setBackgroundColor(unclickedButtonColor);
+                button9.setBackgroundColor(unclickedButtonColor);
+                button10.setBackgroundColor(unclickedButtonColor);
+                button11.setBackgroundColor(unclickedButtonColor);
+                button12.setBackgroundColor(unclickedButtonColor);
+
+                // Reset all button clicked to false
+                button1Clicked = false;
+                button2Clicked = false;
+                button3Clicked = false;
+                button4Clicked = false;
+                button5Clicked = false;
+                button6Clicked = false;
+                button7Clicked = false;
+                button8Clicked = false;
+                button9Clicked = false;
+                button10Clicked = false;
+                button11Clicked = false;
+                button12Clicked = false;
+            }
+        });
         button1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
