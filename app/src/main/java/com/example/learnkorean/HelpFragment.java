@@ -2,61 +2,122 @@ package com.example.learnkorean;
 
 import android.os.Bundle;
 
+import androidx.core.content.res.ResourcesCompat;
 import androidx.fragment.app.Fragment;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 
 
 /**
  * A {@link Fragment} subclass for the tutorial page.
  */
 public class HelpFragment extends Fragment {
-    // TODO: Rename parameter arguments, choose names that match
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-    private static final String ARG_PARAM1 = "param1";
-    private static final String ARG_PARAM2 = "param2";
+    // Global variables
+    private Button learnButton;
+    private Button gameButton1;
+    private Button gameButton2;
 
-    // TODO: Rename and change types of parameters
-    private String mParam1;
-    private String mParam2;
+    private boolean learnButtonClicked;
+    private boolean gameButton1Clicked;
+    private boolean gameButton2Clicked;
+
+    private int clickedLearnButtonColor;
+    private int unclickedLearnButtonColor;
+    private int clickedGameButtonColor;
+    private int unclickedGameButtonColor;
+    private int clickedButtonTextColor;
+    private int unclickedButtonTextColor;
 
     public HelpFragment() {
         // Required empty public constructor
     }
 
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
-     * @return A new instance of fragment HelpFragment.
-     */
-    // TODO: Rename and change types and number of parameters
-    public static HelpFragment newInstance(String param1, String param2) {
-        HelpFragment fragment = new HelpFragment();
-        Bundle args = new Bundle();
-        args.putString(ARG_PARAM1, param1);
-        args.putString(ARG_PARAM2, param2);
-        fragment.setArguments(args);
-        return fragment;
-    }
-
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
-        }
+
+        // Reset all button clicked to false
+        learnButtonClicked = false;
+        gameButton1Clicked = false;
+        gameButton2Clicked = false;
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_help, container, false);
+        View view = inflater.inflate(R.layout.fragment_help, container, false);
+
+        // Get reference to the buttons
+        learnButton = view.findViewById(R.id.learn_button);
+        gameButton1 = view.findViewById(R.id.game_button_1);
+        gameButton2 = view.findViewById(R.id.game_button_2);
+
+        // Get colors from the resource
+        clickedLearnButtonColor = ResourcesCompat.getColor(getResources(), R.color.colorLearnButtonClicked, null);
+        unclickedLearnButtonColor = ResourcesCompat.getColor(getResources(), R.color.colorPrimary, null);
+        clickedGameButtonColor = ResourcesCompat.getColor(getResources(), R.color.colorGameButtonClicked, null);
+        unclickedGameButtonColor = ResourcesCompat.getColor(getResources(), R.color.colorPrimary, null);
+        clickedButtonTextColor = ResourcesCompat.getColor(getResources(), R.color.colorLearnButtonTextClicked, null);
+        unclickedButtonTextColor = ResourcesCompat.getColor(getResources(), R.color.colorLearnButtonTextUnclicked, null);
+
+        // Set button text
+        learnButton.setText(R.string.help_sample_korean_text);
+        gameButton1.setText(R.string.help_sample_korean_text);
+        gameButton2.setText(R.string.help_sample_english_text);
+
+        // Set listener to the buttons
+        learnButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(false == learnButtonClicked) {
+                    learnButton.setText(R.string.help_sample_english_text);
+                    learnButton.setTextColor(clickedButtonTextColor);
+                    view.setBackgroundColor(clickedLearnButtonColor);
+                    learnButtonClicked = true;
+                }
+                else {
+                    learnButton.setText(R.string.help_sample_korean_text);
+                    learnButton.setTextColor(unclickedButtonTextColor);
+                    view.setBackgroundColor(unclickedLearnButtonColor);
+                    learnButtonClicked = false;
+                }
+            }
+        });
+        gameButton1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(false == gameButton1Clicked) {
+                    gameButton1.setTextColor(clickedButtonTextColor);
+                    view.setBackgroundColor(clickedGameButtonColor);
+                    gameButton1Clicked = true;
+                }
+                else {
+                    gameButton1.setTextColor(unclickedButtonTextColor);
+                    view.setBackgroundColor(unclickedGameButtonColor);
+                    gameButton1Clicked = false;
+                }
+            }
+        });
+        gameButton2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(false == gameButton2Clicked) {
+                    gameButton2.setTextColor(clickedButtonTextColor);
+                    view.setBackgroundColor(clickedGameButtonColor);
+                    gameButton2Clicked = true;
+                }
+                else {
+                    gameButton2.setTextColor(unclickedButtonTextColor);
+                    view.setBackgroundColor(unclickedGameButtonColor);
+                    gameButton2Clicked = false;
+                }
+            }
+        });
+
+        return view;
     }
 }

@@ -2,12 +2,18 @@
     <string name="app_name">Learn Korean</string>
 
     <!-- TODO: Remove or change this placeholder text -->
-    <string name="tutorial">Tutorial</string>
-    <string name="learn_korean">Learn Korean</string>
-    <string name="play_game">Play Game</string>
-    <string name="hello_blank_fragment">Hello blank fragment</string>
-    <string name="score">Score:&#032;"</string>
-    <string name="click">Clicked</string>
-    <string name="unclick">Unclicked</string>
-    <string name="get_new_characters">Get New Characters</string>
+    <string name="help_mode_title">Tutorial</string>
+    <string name="learn_mode_title">Learn Korean</string>
+    <string name="game_mode_title">Play Game</string>
+    <string name="reset_button_text">Get New Characters</string>
+    <string name="score_text">Score:&#032;"</string>
+    <string name="help_learn_title">Learning Mode</string>
+    <string name="help_learn_description">This mode lets you learn Korean alphabets and their pronunciation.</string>
+    <string name="help_learn_button_description">Click the button above to check the alphabet\'s pronunciation!</string>
+    <string name="help_learn_reset_button_description">Click the button above to get new korean alphabets!</string>
+    <string name="help_game_title">Game Mode</string>
+    <string name="help_game_description">This mode lets you learn Korean alphabets by letting you match their writing and pronunciation.</string>
+    <string name="help_game_button_description">Click both buttons above to match them!</string>
+    <string name="help_sample_korean_text">ㄱ</string>
+    <string name="help_sample_english_text">g-k</string>
 </resources>
