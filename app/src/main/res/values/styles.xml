@@ -10,8 +10,14 @@
         <item name="colorOnBackground">@color/colorBackground</item>
     </style>
 
-    <style name="ButtonTheme" parent="Widget.MaterialComponents.Button">
+    <style name="ButtonThemeSmall" parent="Widget.MaterialComponents.Button">
         <item name="android:textColor">@color/colorButtonText</item>
+        <item name="android:textSize">16sp</item>
+    </style>
+
+    <style name="ButtonThemeLarge" parent="Widget.MaterialComponents.Button">
+        <item name="android:textColor">@color/colorButtonText</item>
+        <item name="android:textSize">24sp</item>
     </style>
 
 </resources>

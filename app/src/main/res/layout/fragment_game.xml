@@ -12,7 +12,7 @@
 
         <Button
             android:id="@+id/button1"
-            style="@style/ButtonTheme"
+            style="@style/ButtonThemeLarge"
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:layout_marginStart="16dp"
@@ -26,7 +26,7 @@
 
         <Button
             android:id="@+id/button2"
-            style="@style/ButtonTheme"
+            style="@style/ButtonThemeLarge"
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:layout_marginStart="8dp"
@@ -40,7 +40,7 @@
 
         <Button
             android:id="@+id/button3"
-            style="@style/ButtonTheme"
+            style="@style/ButtonThemeLarge"
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:layout_marginStart="16dp"
@@ -55,7 +55,7 @@
 
         <Button
             android:id="@+id/button4"
-            style="@style/ButtonTheme"
+            style="@style/ButtonThemeLarge"
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:layout_marginStart="8dp"
@@ -69,7 +69,7 @@
 
         <Button
             android:id="@+id/button5"
-            style="@style/ButtonTheme"
+            style="@style/ButtonThemeLarge"
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:layout_marginStart="16dp"
@@ -83,7 +83,7 @@
 
         <Button
             android:id="@+id/button6"
-            style="@style/ButtonTheme"
+            style="@style/ButtonThemeLarge"
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:layout_marginStart="8dp"
@@ -97,7 +97,7 @@
 
         <Button
             android:id="@+id/button7"
-            style="@style/ButtonTheme"
+            style="@style/ButtonThemeLarge"
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:layout_marginStart="16dp"
@@ -111,7 +111,7 @@
 
         <Button
             android:id="@+id/button8"
-            style="@style/ButtonTheme"
+            style="@style/ButtonThemeLarge"
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:layout_marginStart="8dp"
@@ -125,7 +125,7 @@
 
         <Button
             android:id="@+id/button9"
-            style="@style/ButtonTheme"
+            style="@style/ButtonThemeLarge"
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:layout_marginStart="16dp"
@@ -139,7 +139,7 @@
 
         <Button
             android:id="@+id/button10"
-            style="@style/ButtonTheme"
+            style="@style/ButtonThemeLarge"
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:layout_marginStart="8dp"
