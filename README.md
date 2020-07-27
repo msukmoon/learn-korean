@@ -3,13 +3,19 @@
 #### https://github.com/msukmoon/learn-korean
 
 <p align="center">
-  <img src="doc/screenshots/main.png" title="Main View">
-  <img src="doc/screenshots/tutorial-1.png" title="Tutorial View 1">
-  <img src="doc/screenshots/tutorial-2.png" title="Tutorial View 2">
-  <img src="doc/screenshots/learning-1.png" title="Learning Mode 1">
-  <img src="doc/screenshots/learning-2.png" title="Learning Mode 2">
-  <img src="doc/screenshots/game-1.png" title="Game Mode 1">
-  <img src="doc/screenshots/game-2.png" title="Game Mode 2">
+  <img src="doc/screenshots/main.png" title="Main View" width="300">
+</p>
+<p align="center">
+  <img src="doc/screenshots/tutorial-1.png" title="Tutorial View 1" width="300">
+  <img src="doc/screenshots/tutorial-2.png" title="Tutorial View 2" width="300">
+</p>
+<p align="center">
+  <img src="doc/screenshots/learning-1.png" title="Learning Mode 1" width="300">
+  <img src="doc/screenshots/learning-2.png" title="Learning Mode 2" width="300">
+</p>
+<p align="center">
+  <img src="doc/screenshots/game-1.png" title="Game Mode 1" width="300">
+  <img src="doc/screenshots/game-2.png" title="Game Mode 2" width="300">
 </p>
 
 ## Getting Started
