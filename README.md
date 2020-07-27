@@ -1,21 +1,23 @@
-# Learn Korean - Andriod App
+# Learn Korean -- Andriod Application
 
 #### https://github.com/msukmoon/learn-korean
 
+Learn Korean is a simple Android application that helps users learn Korean alphabets and pronunciation. It has learning and game mode that helps users to pick up their new language more easily.
+
 <p align="center">
-  <img src="doc/screenshots/main.png" title="Main View" width="300">
+  <img src="doc/screenshots/main.png" title="Main View" width="250"/>
 </p>
 <p align="center">
-  <img src="doc/screenshots/tutorial-1.png" title="Tutorial View 1" width="300">
-  <img src="doc/screenshots/tutorial-2.png" title="Tutorial View 2" width="300">
+  <img src="doc/screenshots/tutorial-1.png" title="Tutorial View 1" width="250">
+  <img src="doc/screenshots/tutorial-2.png" title="Tutorial View 2" width="250">
 </p>
 <p align="center">
-  <img src="doc/screenshots/learning-1.png" title="Learning Mode 1" width="300">
-  <img src="doc/screenshots/learning-2.png" title="Learning Mode 2" width="300">
+  <img src="doc/screenshots/learning-1.png" title="Learning Mode 1" width="250">
+  <img src="doc/screenshots/learning-2.png" title="Learning Mode 2" width="250">
 </p>
 <p align="center">
-  <img src="doc/screenshots/game-1.png" title="Game Mode 1" width="300">
-  <img src="doc/screenshots/game-2.png" title="Game Mode 2" width="300">
+  <img src="doc/screenshots/game-1.png" title="Game Mode 1" width="250">
+  <img src="doc/screenshots/game-2.png" title="Game Mode 2" width="250">
 </p>
 
 ## Getting Started
