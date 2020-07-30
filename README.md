@@ -4,6 +4,7 @@
 
 Learn Korean is a simple Android application that helps users learn Korean alphabets and pronunciation. It has learning and game mode which helps users to pick up their new language more easily.
 
+<br/>
 <p align="center">
   <img src="doc/screenshots/main.png" title="Main Menu" width="250">
 </p>
@@ -25,19 +26,27 @@ Learn Korean is a simple Android application that helps users learn Korean alpha
   <img src="doc/screenshots/game-1.png" title="Game Mode 1" width="250">
   <img src="doc/screenshots/game-2.png" title="Game Mode 2" width="250">
 </p>
-<p align="center">Game Mode</p>
+<p align="center">Game Mode (Incomplete)</p>
 
 ## Getting Started
 
-This will be updated later.
+This is a Android Studio project that has not been published. It is required to import this project to Andriod Studio to run it.
 
 ### Running the Application
 
-This will be updated later.
+In Andriod Studio's welcome page,
+
+1. Select `Check out project from Version Control`.
+
+2. Select `Git`.
+
+3. Put `https://github.com/msukmoon/learn-korean` for the URL and then select `Clone`.
+
+4. Select `Run`. You will need an Android Virtual Device (AVD) with Android 7.0 (API level 24) or higher.
 
 ### Checking Source Codes
 
-This will be updated later.
+Source codes are in `app/src/main`. In this directory, Java source codes are in `com.example.learnkorean`, and XML resource files are in `res`.
 
 ## Author
 
